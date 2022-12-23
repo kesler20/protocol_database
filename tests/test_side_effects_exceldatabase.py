@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
 import unittest
-from protocol_database.test_base import Test_ExcelDatabase
-from protocol_database._base import (
+from test_base import (
+    Test_ExcelDatabase,
     folder_name, 
     base_df, 
     base_df_cols, 
@@ -290,7 +290,6 @@ class Test_SideEffects_ExcelDatabase(Test_ExcelDatabase):
         # test that the side effect is expected
         test_result = self.test_client.get_table(base_table_name)
         self.assertTrue(test_result.equals(side_effect_output[0]))
-
-
+    
 if __name__ == "__main__":
     unittest.main()

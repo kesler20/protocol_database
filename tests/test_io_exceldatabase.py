@@ -1,8 +1,6 @@
 import unittest
-from protocol_database.test_base import Test_ExcelDatabase
+from test_base import Test_ExcelDatabase
 import pandas
-
-
 
 class Test_IO_ExcelDatabase(Test_ExcelDatabase):
 
@@ -623,7 +621,6 @@ class Test_IO_ExcelDatabase(Test_ExcelDatabase):
 
         test_result = self.test_client.delete_columns(*invalid_values_input)
         self.assertEqual(test_result, invalid_values_output[0])
-
 
 if __name__ == "__main__":
     unittest.main()

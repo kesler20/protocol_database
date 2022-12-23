@@ -1,6 +1,40 @@
-# Design Overview
+# Protocol Database
 
-The excel database can be manipulated from the ``ExcelDatabase`` class specified below 
+The excel database can be manipulated from the ``ExcelDatabase`` 
+
+## Example
+
+```python
+from exceldatabase import ExcelDatabase
+
+if __name__ == "__main__":
+  db = ExcelDatabase()
+  db.create_table("my_routine", ["Week Day", "Expenses"], [
+                  ["Monday", 0.5], ["Tuesday",0.2]])
+  print(db.get_table("my_routine"))
+  db.preview_table("my_routine")
+```
+>output
+```bash
+  Week Day  Expenses
+0   Monday       0.5
+1  Tuesday       0.2
+```
+
+To inspect the file if the preview_table method does not run you can run the following command
+```bash
+start excel protocol_database\my_routine.xlsx
+```
+>output
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+  <img src="./my_routine.PNG" alt="" srcset="" style="width: 30%;">
+</div>
+
+the ``ExcelDatabase`` class is specified below 
+Example of creating a table
+
+## Design Overview
+
 ```mermaid
 classDiagram
    ExcelDatabase <|-- object
@@ -29,7 +63,7 @@ classDiagram
 ```
 ## Schema
 The database is organized in folders and excel files, where folders represent databases and excel files are tables
- 
+
 ## Improvements
 - [ ] create a way to index the different files (if i want to link two values from two different tables) some potential solutions
 * use sub_folders within the folder (database) to group related tables (parents of a table)

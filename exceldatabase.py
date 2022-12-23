@@ -4,8 +4,8 @@ from pathlib import Path
 import pandas as pd
 from typing import List, Any, Union, Dict, Optional, Tuple, Callable
 from dataclasses import dataclass
-from protocol_database._types import DataFrame
-from protocol_database._base import folder_name
+from _types import DataFrame
+from _base import folder_name
 
 
 @dataclass
@@ -99,6 +99,22 @@ class ExcelDatabase:
         print(f"{message}...")
         print(f"======= {table_name} ==========")
         print(table)
+    
+    def preview_table(self, table_name: str):
+        """Open the table selected in excel
+        
+        Parameters
+        ---
+        table_name : str
+            name of hte table to preview
+            
+        Returns
+        ---
+        None
+        """
+        if self.__guard_clause([(table_name, str)],"preview_table") is None or table_name == "":
+            return None
+        os.system(f'''start excel {os.path.join(self.folder_name,f"{table_name}.xlsx")}''')
 
     def create_database(self, folder_name: str) -> None:
         """Create a database with the given database name
@@ -149,6 +165,9 @@ class ExcelDatabase:
         ---
         result : None
         """
+        if not Path(self.folder_name).exists():
+            os.mkdir(self.folder_name)
+
         # if the guard clause does not return None then there are no invalid input
         if self.__guard_clause([(table_name, str), (columns, list), (rows, list)], "create_table") is None:
             return None
