@@ -27,7 +27,7 @@ start excel protocol_database\my_routine.xlsx
 ```
 >output
 <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-  <img src="./my_routine.PNG" alt="" srcset="" style="width: 30%;">
+  <img src="./img/my_routine.PNG" alt="" srcset="" style="width: 30%;">
 </div>
 
 the ``ExcelDatabase`` class is specified below 
