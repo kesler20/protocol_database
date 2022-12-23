@@ -30,10 +30,10 @@ start excel protocol_database\my_routine.xlsx
   <img src="./img/my_routine.PNG" alt="" srcset="" style="width: 30%;">
 </div>
 
+## Design Overview
+
 the ``ExcelDatabase`` class is specified below 
 Example of creating a table
-
-## Design Overview
 
 ```mermaid
 classDiagram
