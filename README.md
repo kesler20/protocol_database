@@ -27,7 +27,7 @@ start excel protocol_database\my_routine.xlsx
 ```
 >output
 <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-  <img src="./img/my_routine.PNG" alt="" srcset="" style="width: 30%;">
+  <img src="./images/my_routine.PNG" alt="" srcset="" style="width: 30%;">
 </div>
 
 ## Design Overview
@@ -109,7 +109,7 @@ class DietBase:
 At the latest, using the diagramming tool mentioned earlier the database schema looks like the following
 
 <div style="width:100%; display:flex; justify-content:center; align-items;center;">
-<img src="../images/SCHEMA.png" style="width:98%;">
+<img src="./images/SCHEMA.png" style="width:98%;">
 </div>
 
 The code that is exported can then be modified in virtual studio code as follows:
@@ -211,7 +211,7 @@ SELECT * FROM Expenses;
 and this is what the data looks like
 
 <div style="width:100%; display:flex; justify-content:center; align-items;center;">
-<img src="../images/Test_example.png" style="width:40%;">
+<img src="./images/Test_example.png" style="width:40%;">
 </div>
 
 The final python code to run on sqlite is:
