@@ -10,7 +10,6 @@ class DataFrameLocator(Protocol):
     def __setitem__(self, item: Any, anotherItem: Any = None) -> Any:
         ...
 
-
 class DataFrame(Protocol):
 
     def __getitem__(self, other: Any, another: Any = None) -> DataFrameLocator:
@@ -65,7 +64,7 @@ class DataFrame(Protocol):
     def tail(self, n: int) -> Any:
         ...
 
-    def to_excel(self, folder_name: str, sheet_name: str, index: Optional[bool] = False) -> None:
+    def to_excel(self, filename: str, sheet_name: str, index: Optional[bool] = False) -> None:
         ...
 
     def drop(self, axes: List[Any], inplace: Optional[bool]) -> None:
@@ -75,10 +74,4 @@ class DataFrame(Protocol):
         ...
 
     def pop(self, column_name: str) -> None:
-        ...
-
-    def sample(self, n: int) -> Any:
-        ...
-    
-    def equals(self, df: Any) -> bool:
         ...
